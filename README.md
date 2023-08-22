@@ -22,7 +22,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 About <a name="about-the-project"></a>
+# 📖 Quill Quest <a name="about-the-project"></a>
 
 > This is a blog app based on ruby on rails. This app will feature users, posts, comments, likes.
 
