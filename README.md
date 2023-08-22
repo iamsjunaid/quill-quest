@@ -96,7 +96,7 @@ To run tests, run the following command:
 👤 **Junaid Ahmed Syed**
 
 - GitHub: [@iamsjunaid](https://github.com/iamsjunaid)
-- LinkedIn: [@junaidahmedsyed](https://linkedin.com/junaidahmedsyed)
+- LinkedIn: [@junaidahmedsyed](https://www.linkedin.com/in/junaidahmedsyed/)
 <!-- - LinkedIn: [username](link) -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
