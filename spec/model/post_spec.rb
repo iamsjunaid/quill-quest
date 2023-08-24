@@ -63,4 +63,19 @@ RSpec.describe Post, type: :model do
       expect(post.errors[:likes_counter]).to include('is not a number')
     end
   end
+
+  describe '#recent_comments' do
+    it 'Check recent_comments, it should return 5 recent comments' do
+      expect(subject.recent_comments).to eq(subject.comments.order(created_at: :desc).limit(5))
+    end
+  end
+
+  describe '#update_post_counter' do
+    it 'increments the user posts_counter attribute by 1' do
+      author = User.create!(name: 'John Doe', posts_counter: 1)
+      post = Post.new(title: 'Title', comments_counter: 0, likes_counter: 0, author: author)  # Set the author attribute
+
+      expect { post.save! }.to change { author.reload.posts_counter }.by(1)
+    end
+  end
 end
