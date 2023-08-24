@@ -27,6 +27,13 @@ RSpec.describe User, type: :model do
   end
 
   describe '#posts_counter' do
+    context 'when posts_counter is not numeric' do
+      it 'returns not valid' do
+        subject.posts_counter = 'not_numeric'
+        expect(subject).to_not be_an_instance_of(Numeric)
+      end
+    end
+
     context 'when posts_counter is nil' do
       it 'returns not valid without a posts_counter' do
         subject.posts_counter = nil
