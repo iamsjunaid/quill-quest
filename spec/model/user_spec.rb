@@ -61,4 +61,18 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe '#recent_posts' do
+    it 'returns the 3 most recent posts' do
+
+      user = User.create(name: 'Junaid')
+      post1 = Post.create(title: 'post1', author: user, created_at: 4.day.ago)
+      post2 = Post.create(title: 'post2', author: user, created_at: 3.day.ago)
+      post3 = Post.create(title: 'post3', author: user, created_at: 2.day.ago)
+
+      recent_posts = user.recent_posts
+
+      expect(recent_posts).to eq(user.posts.order(created_at: :desc).limit(3))
+    end
+  end
 end
