@@ -6,21 +6,21 @@ RSpec.describe User, type: :model do
   before { subject.save }
   describe '#name' do
     context 'when name is nil' do
-      it 'returns not valid without a name' do
+      it 'returns false without a name' do
         subject.name = nil
         expect(subject).to_not be_valid
       end
     end
 
     context 'when name is empty' do
-      it 'returns not valid without a name' do
+      it 'returns false without a name' do
         subject.name = ''
         expect(subject).to_not be_valid
       end
     end
 
     context 'when name is valid' do
-      it 'returns valid' do
+      it 'returns true' do
         expect(subject).to be_valid
       end
     end
@@ -28,35 +28,35 @@ RSpec.describe User, type: :model do
 
   describe '#posts_counter' do
     context 'when posts_counter is not numeric' do
-      it 'returns not valid' do
+      it 'returns false' do
         subject.posts_counter = 'not_numeric'
         expect(subject).to_not be_an_instance_of(Numeric)
       end
     end
 
     context 'when posts_counter is nil' do
-      it 'returns not valid without a posts_counter' do
+      it 'returns false without a posts_counter' do
         subject.posts_counter = nil
         expect(subject).to_not be_valid
       end
     end
 
     context 'when posts_counter is empty' do
-      it 'returns not valid without a posts_counter' do
+      it 'returns false without a posts_counter' do
         subject.posts_counter = ''
         expect(subject).to_not be_valid
       end
     end
 
     context 'when posts_counter is negative' do
-      it 'returns not valid without a posts_counter' do
+      it 'returns false without a posts_counter' do
         subject.posts_counter = -1
         expect(subject).to_not be_valid
       end
     end
 
     context 'when posts_counter is positive' do
-      it 'returns valid' do
+      it 'returns true' do
         expect(subject).to be_valid
       end
     end
