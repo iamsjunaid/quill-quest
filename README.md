@@ -70,7 +70,13 @@ Clone this repository to your desired folder:
   cd my-folder
   git clone https://github.com/salimer/quill-quest.git
 ```
+### Install
 
+Install the project dependencies with:
+
+```
+  bundle install
+```
 ### Usage
 
 To run the project, execute the following command:
