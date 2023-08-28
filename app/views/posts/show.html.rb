@@ -1,1 +1,0 @@
-<h1>Here is a post for a given user</h1>
