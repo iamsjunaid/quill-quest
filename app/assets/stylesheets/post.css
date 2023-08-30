@@ -67,6 +67,7 @@
   justify-content: center;
   align-items: center;
 }
+
 form {
   gap: 3em;
   display: flex;
@@ -80,12 +81,15 @@ form {
   width: 60vw;
   border: 3px solid;
 }
+
 .form_title {
   height: 10vh;
 }
+
 .form_text {
   height: 50vh;
 }
+
 .form_title::placeholder,
 .form_text::placeholder {
   padding: 1em;
