@@ -14,8 +14,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    puts 'Current User'
-
     @post = Post.new(post_params)
     @post.author = current_user
 
