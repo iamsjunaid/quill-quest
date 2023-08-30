@@ -73,6 +73,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 3em;
 }
 
 .form_title,
@@ -93,4 +94,8 @@ form {
 .form_title::placeholder,
 .form_text::placeholder {
   padding: 1em;
+}
+
+.like_btn {
+  align-self: flex-end;
 }
