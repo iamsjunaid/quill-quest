@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'User Index Page', type: :feature do
+RSpec.describe 'User Show Page', type: :feature do
   before :each do
     @user = User.create(name: 'Batman', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Superhero', posts_counter: 6)
     @post = Post.create(title: 'The Dark Night', text: 'This is not my first post', comments_counter: 15, likes_counter: 18, author: @user)
