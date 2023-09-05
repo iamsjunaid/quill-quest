@@ -12,6 +12,7 @@ RSpec.describe 'Post Show', type: :system do
 
   scenario 'see the title of the post and who wrote it and the interactions' do
     visit user_post_path(@user, @post)
+    expect(page).to have_content('Batman')
     expect(page).to have_content('This is my first post')
     expect(page).to have_content('Comments: 18')
     expect(page).to have_content('Likes: 19')
