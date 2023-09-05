@@ -12,18 +12,42 @@ RSpec.describe 'Post Show', type: :system do
     @like = Like.create(author: @user, post: @post)
   end
 
-  scenario 'see the title of the post and who wrote it and the interactions' do
-    visit user_post_path(@user, @post)
-    expect(page).to have_content('Batman')
-    expect(page).to have_content('This is my first post')
-    expect(page).to have_content('Comments: 18')
-    expect(page).to have_content('Likes: 19')
-  end
+  describe 'Post show page' do
+    it 'displays the post title' do
+      visit user_post_path(@user, @post.id)
+      expect(page).to have_content('The Dark Night')
+    end
 
-  scenario 'see the comments post' do
-    visit user_post_path(@user, @post)
-    expect(page).to have_content('This is my first comment')
-    expect(page).to have_content('This is my second comment')
-    expect(page).to have_content('This is my third comment')
+    it 'displays the post author' do
+      visit user_post_path(@user, @post.id)
+      expect(page).to have_content('Batman')
+    end
+
+    it 'displays the post text' do
+      visit user_post_path(@user, @post.id)
+      expect(page).to have_content('This is my first post')
+    end
+
+    it 'displays the comments counter' do
+      visit user_post_path(@user, @post.id)
+      expect(page).to have_content('Comments: 18')
+    end
+
+    it 'displays the likes counter' do
+      visit user_post_path(@user, @post.id)
+      expect(page).to have_content('Likes: 1')
+    end
+
+    it 'displays the user name of each commentor' do
+      visit user_post_path(@user, @post.id)
+      expect(page).to have_content('Batman')
+    end
+
+    it 'displays the comment text' do
+      visit user_post_path(@user, @post.id)
+      expect(page).to have_content('This is my first comment')
+      expect(page).to have_content('This is my second comment')
+      expect(page).to have_content('This is my third comment')
+    end
   end
 end
