@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  
   before_action :find_user, only: [:index]
 
   def index
@@ -30,7 +29,7 @@ class PostsController < ApplicationController
   end
 
   def find_user
-    @user = User.includes(:posts, posts:[:comments, comments:[:author]]).find(params[:user_id])
+    @user = User.includes(:posts, posts: [:comments, { comments: [:author] }]).find(params[:user_id])
   end
 
   private

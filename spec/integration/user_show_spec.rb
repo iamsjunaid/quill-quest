@@ -2,8 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'User Show Page', type: :feature do
   before :each do
-    @user = User.create(name: 'Batman', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Superhero', posts_counter: 6)
-    @post = Post.create(title: 'The Dark Night', text: 'This is not my first post', comments_counter: 15, likes_counter: 18, author: @user)
+    @user = User.create(name: 'Batman', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Superhero',
+                        posts_counter: 6)
+    @post = Post.create(title: 'The Dark Night', text: 'This is not my first post', comments_counter: 15,
+                        likes_counter: 18, author: @user)
   end
 
   describe 'User show page' do
@@ -40,7 +42,6 @@ RSpec.describe 'User Show Page', type: :feature do
     it 'has a button to view all user posts' do
       expect(page).to have_link('See all Posts', href: user_posts_path(user_id: @user.id))
     end
-
 
     it 'redirects to the post show page on clicking a user post' do
       click_link(@post.text)

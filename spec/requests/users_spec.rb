@@ -6,7 +6,7 @@ RSpec.describe 'Users', type: :request do
 
   describe 'GET #index' do
     before(:example) { get users_path }
-    
+
     it 'returns http success' do
       expect(response).to have_http_status(:ok)
     end
@@ -22,7 +22,7 @@ RSpec.describe 'Users', type: :request do
 
   describe 'GET #show' do
     before(:example) { get user_path(id: @user.id) }
-    
+
     it 'returns http success' do
       expect(response).to have_http_status(:ok)
     end
