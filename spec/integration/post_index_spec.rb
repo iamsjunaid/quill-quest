@@ -11,7 +11,7 @@ RSpec.describe 'Post Index', type: :system do
       @comment2 = Comment.create(author: @user, post: @post, text: 'This is my second comment')
       @comment3 = Comment.create(author: @user, post: @post, text: 'This is my third comment')
       @like = Like.create(author: @user, post: @post)
-        
+
       visit user_posts_path(user_id: @user.id)
     end
 
