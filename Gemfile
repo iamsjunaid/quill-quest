@@ -12,6 +12,9 @@ gem 'sprockets-rails'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 
+# add authorization to the application
+gem 'cancancan'
+
 # use the devise gem as the session and account manager for the application
 gem 'devise'
 
