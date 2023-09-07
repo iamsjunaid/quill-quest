@@ -33,8 +33,9 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
 
-    # Delete all likes associated with the post
+    # Delete all likes and comments associated with the post
     @post.likes.destroy_all
+    @post.comments.destroy_all
 
     if @post.destroy
       redirect_to user_posts_path(current_user), notice: 'Post deleted successfully'
