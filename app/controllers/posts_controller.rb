@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
-  
   load_and_authorize_resource
-  
+
   before_action :find_user, only: [:index]
 
   def index
@@ -36,7 +35,7 @@ class PostsController < ApplicationController
 
     # Delete all likes associated with the post
     @post.likes.destroy_all
-    
+
     if @post.destroy
       redirect_to user_posts_path(current_user), notice: 'Post deleted successfully'
     else
