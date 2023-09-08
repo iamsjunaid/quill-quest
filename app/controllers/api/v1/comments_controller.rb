@@ -28,12 +28,3 @@ class Api::V1::CommentsController < ApplicationController
     @post = @user.posts.find(params[:post_id])
   end
 end
-
-
-
-
-
-
-
-
-
