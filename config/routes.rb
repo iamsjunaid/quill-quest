@@ -7,5 +7,14 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: [] do
+        resources :posts, only: [:index] do
+        end
+      end
+    end
+  end
+  
   root 'users#index', as: 'home'
 end
